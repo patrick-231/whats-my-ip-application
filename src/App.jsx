@@ -1,11 +1,14 @@
-import Map from './components/Map'
+import UserIP from './components/UserIP'
+
+
 
 
 function App() {
   
   return (
     <>
-    <Map/>
+    <UserIP/>
+  
       
     </>
   )

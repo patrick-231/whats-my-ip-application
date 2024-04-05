@@ -1,12 +1,16 @@
-import React from 'react';
+import { TileLayer, Marker, Popup, MapContainer } from "react-leaflet";
+import React from "react";
 
-
-function Map() {
+export default function Map({ position }) {
   return (
-    <div>
-        <h1 className='bg-red-300'>Map</h1>
-    </div>
-  )
+    <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={position}>
+        <Popup>My location.</Popup>
+      </Marker>
+    </MapContainer>
+  );
 }
-
-export default Map;
